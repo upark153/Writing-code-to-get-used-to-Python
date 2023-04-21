@@ -468,4 +468,146 @@ def is_win(player, opponent):
 
 print(play())
 ```
+![image](https://user-images.githubusercontent.com/115389450/233554462-379ec750-a3f2-4f3b-abf9-2757747ee7e9.png)
+```
+import random
+list = ["x","x","o","x","x"]
+game = ["가위","바위","보"]
+
+print(list)
+print("게임의 규칙은 o가 왼쪽 맨끝으로 이동하면 a승리! o가 오른쪽 맨끝으로 이동하면 b가 승리 ! 입니다.")
+cnt = 0
+while True:
+    a = random.choice(game)
+    b = random.choice(game)
+    if a=="가위" and b=="가위":
+        cnt += 1
+        print(f"무승부입니다.. {cnt}판 o의 위치는 변함이 없습니다.")
+        print(list)
+        continue
+    if a=="바위" and b=="바위":
+        cnt += 1
+        print(f"무승부입니다.. {cnt}판 o의 위치는 변함이 없습니다.")
+        print(list)
+        continue
+    if a=="보" and b=="보":
+        cnt += 1
+        print(f"무승부입니다.. {cnt}판 o의 위치는 변함이 없습니다.")
+        print(list)
+        continue
+    if a=="가위" and b=="보": # a의 승리
+        if list[2] == "o":
+            cnt += 1
+            print(f'{cnt}판 a의 승리! 아직 끝나지 않았습니다.')
+            list[1], list[2] = list[2], list[1]
+            print(list)
+            continue
+        elif list[1] == "o":
+            list[0], list[1] = list[1], list[0]
+            cnt += 1
+            print(f"a ! 총 {cnt}판만에 당신의 승리로 게임은 종료됩니다.")
+            print(list)
+            break
+        elif list[3] == "o":
+            cnt += 1
+            print(f'{cnt}판 a의 승리! 아직 끝나지 않았습니다.')
+            list[2], list[3] = list[3], list[2]
+            print(list)
+            continue
+    if a=="바위" and b=="가위": # a의 승리
+        if list[2] == "o":
+            cnt += 1
+            print(f'{cnt}판 a의 승리! 아직 끝나지 않았습니다.')
+            list[1], list[2] = list[2], list[1]
+            print(list)
+            continue
+        elif list[1] == "o":
+            list[0], list[1] = list[1], list[0]
+            cnt += 1
+            print(f"a ! 총 {cnt}판만에 당신의 승리로 게임은 종료됩니다.")
+            print(list)
+            break
+        elif list[3] == "o":
+            cnt += 1
+            print(f'{cnt}판 a의 승리! 아직 끝나지 않았습니다.')
+            list[2], list[3] = list[3], list[2]
+            print(list)
+            continue
+    if a=="보" and b=="바위": # a의 승리
+        if list[2] == "o":
+            cnt += 1
+            print(f'{cnt}판 a의 승리! 아직 끝나지 않았습니다.')
+            list[1], list[2] = list[2], list[1]
+            print(list)
+            continue
+        elif list[1] == "o":
+            list[0], list[1] = list[1], list[0]
+            cnt += 1
+            print(f"a ! 총 {cnt}판만에 당신의 승리로 게임은 종료됩니다.")
+            print(list)
+            break
+        elif list[3] == "o":
+            cnt += 1
+            print(f'{cnt}판 a의 승리! 아직 끝나지 않았습니다.')
+            list[2], list[3] = list[3], list[2]
+            print(list)
+            continue
+    if a=="가위" and b=="바위": # b의 승리
+        if list[2] == "o":
+            cnt += 1
+            print(f'{cnt}판 b의 승리! 아직 끝나지 않았습니다.')
+            list[2], list[3] = list[3], list[2]
+            print(list)
+            continue
+        elif list[1] == "o":
+            cnt += 1
+            print(f'{cnt}판 b의 승리! 아직 끝나지 않았습니다.')
+            list[1], list[2] = list[2], list[1]
+            print(list)
+            continue
+        elif list[3] == "o":
+            list[3], list[4] = list[4], list[3]
+            cnt += 1
+            print(f"b ! 총 {cnt}판만에 당신의 승리로 게임은 종료 됩니다.")
+            print(list)
+            break
+    if a=="바위" and b=="보": # b의 승리
+        if list[2] == "o":
+            cnt += 1
+            print(f'{cnt}판 b의 승리! 아직 끝나지 않았습니다.')
+            list[2], list[3] = list[3], list[2]
+            print(list)
+            continue
+        elif list[1] == "o":
+            cnt += 1
+            print(f'{cnt}판 b의 승리! 아직 끝나지 않았습니다.')
+            list[1], list[2] = list[2], list[1]
+            print(list)
+            continue
+        elif list[3] == "o":
+            list[3], list[4] = list[4], list[3]
+            cnt += 1
+            print(f"b ! 총 {cnt}판만에 당신의 승리로 게임은 종료 됩니다.")
+            print(list)
+            break
+    if a=="보" and b=="가위": # b의 승리
+        if list[2] == "o":
+            cnt += 1
+            print(f'{cnt}판 b의 승리! 아직 끝나지 않았습니다.')
+            list[2], list[3] = list[3], list[2]
+            print(list)
+            continue
+        elif list[1] == "o":
+            cnt += 1
+            print(f'{cnt}판 b의 승리! 아직 끝나지 않았습니다.')
+            list[1], list[2] = list[2], list[1]
+            print(list)
+            continue
+        elif list[3] == "o":
+            list[3], list[4] = list[4], list[3]
+            cnt += 1
+            print(f"b ! 총 {cnt}판만에 당신의 승리로 게임은 종료 됩니다.")
+            print(list)
+            break
+```
 
