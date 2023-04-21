@@ -252,3 +252,113 @@ main()
 [파이썬 게임 코드 참조](https://whyjoosokkagi.tistory.com/54)
 
 ![image](https://user-images.githubusercontent.com/115389450/233532567-f7203c3b-b7f0-497a-8324-a319923d252e.png)
+
+![image](https://user-images.githubusercontent.com/115389450/233535504-c94bd49b-f282-497f-bb8c-09eabc06b5a4.png)
+```
+while True:
+    money = 10000
+    coffee = int(input("안녕하세요 손님 커피를 몇 잔 만들어드릴까요? 커피는 1잔당 5000원입니다.:"))
+    coffeetotal = coffee*5000
+    if money<coffeetotal:
+        print(f'돈이부족합니다. 필요하신돈은 {coffeetotal-money}원입니다. ')
+        lessMoney = int(input(f'그렇군요, 돈 더 드리겠습니다. : '))
+    print(f"커피를 {coffee}잔 만들어드리겠습니다.")
+    i = 0
+    while i<=5:
+        print(f"커피 제조중입니다. {i}분 지났습니다.")
+        i = i + 1
+    print(f"요청하신 커피 {coffee}잔 나왔습니다. 즐거운 하루 되세요")
+    break
+```
+![image](https://user-images.githubusercontent.com/115389450/233535572-6751affd-88b6-4bee-b658-84dd0839ad3f.png)
+```
+uzacha = 1200
+coffee = 500
+cocoa = 300
+money = int(input("음료수를 사기 위해 돈을 넣어주쎄용 : "))
+range1 = money//uzacha
+range2 = money//coffee
+range3 = money//cocoa
+for i in range(0, range1+1):
+    for j in range(0, range2+1):
+        for k in range(0, range3+1):
+            sum = i * uzacha + j * coffee + k * cocoa
+            if sum>money-300 and sum<=money:
+                print(f'유자차{i}개, 커피{j}개, 코코아{k}개를 살 수 있습니다.')
+```
+```
+for i in range(0, 9):
+    for j in range(0, 21):
+        for k in range(33, 0, -1):
+            sum = i * uzacha + j * coffee + k * cocoa
+            if sum>=9700 and sum<=10000:
+                print(f'유자차{i}개, 커피{j}개, 코코아{k}개를 살 수 있습니다.')
+```
+```
+#유자차 1200원, 커피 500원 코코아 300원
+drink = {'uzacha':1200, 'coffee': 500, 'cocoa': 300}
+
+sum = 0
+money = int(input("음료수를 사기 위해 돈을 넣어주쎄용 : "))
+while True:
+    leftMoney = money - sum
+    print(f'현재 잔액은{leftMoney} 남았습니다.')
+    choice = input("음료수 선택(M), 계산하기(B), 종료(C) : ")
+    if choice == 'M':
+        drinkchoice = input("원하는 음료를 영어로 입력해 주세요 : ")
+        if drinkchoice == 'uzacha':
+            sum += drink['uzacha']
+            if sum>money:
+                print(f"돈이 부족합니다. 잔돈을 {leftMoney}을 반환해드립니다.")
+                break
+            else:
+                print("유자차 1개 나옵니다. 또르륵")
+        elif drinkchoice == 'coffee':
+            sum += drink['coffee']
+            if sum > money:
+                print(f"돈이 부족합니다. 잔돈을 {leftMoney}을 반환해드립니다.")
+                break
+            else:
+                print("유자차 1개 나옵니다. 또르륵")
+        elif drinkchoice == 'cocoa':
+            sum += drink['cocoa']
+            if sum > money:
+                print(f"돈이 부족합니다. 잔돈을 {leftMoney}을 반환해드립니다.")
+                break
+            else:
+                print("유자차 1개 나옵니다. 또르륵")
+            continue
+    if choice == 'B':
+        print(f'계산합니다. 잔돈은 {leftMoney}입니다.')
+        break
+    if choice == 'C':
+        print("종료합니다.")
+        break
+```
+![image](https://user-images.githubusercontent.com/115389450/233535672-0c3234c5-d0dd-42ee-8afd-53c3acbb3577.png)
+```
+sum = 0
+uzacha = 1200
+coffee = 500
+cocoa = 300
+money = int(input("음료수를 사기 위해 돈을 넣어주쎄용 : "))
+range1 = money//uzacha
+range2 = money//coffee
+range3 = money//cocoa
+print(f'유자차 : {range1}개, 커피 : {range2}개, 코코아 : {range3}개 살 수 있습니다.(각각 최대갯수)')
+print(f'유자차 : 1200원, 커피 : 500원, 코코아: 300원 입니다.')
+while True:
+    choice = int(input("유자차 개수를 말씀 해 주세요."))
+    choice2 = int(input("커피 개수를 말씀 해 주세요."))
+    choice3 = int(input("코코아 개수를 말씀 해 주세요."))
+    drinktotal = uzacha*choice + coffee*choice2 + cocoa*choice3
+    if drinktotal>money:
+        print("돈이 부족해요 다시 선택해주세요,")
+    else:
+        print(f"총 금액은 {drinktotal}원 입니다.")
+        print(f"잔돈 {money-drinktotal}원 남겨 드립니다.")
+        break
+```
+![image](https://user-images.githubusercontent.com/115389450/233535714-fbe122fa-5747-46b1-97a7-45a5c904d3de.png)
+
+
